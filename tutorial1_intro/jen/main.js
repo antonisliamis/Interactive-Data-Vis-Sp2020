@@ -34,6 +34,7 @@ d3.csv("directory.csv").then(data => {
     .selectAll("tr")
     .data(data)
     .join("tr");
+    .style ("background", "green")
 
   // cells
   rows
@@ -52,10 +53,6 @@ d3.csv("directory.csv").then(data => {
     .selectAll("td:last-child")
       .style("border-right", "none");
 
-// averages row: https://stackoverflow.com/questions/37044713/how-can-we-sum-the-data-of-csv-file-columnwise-using-d3-js
 
-
-
-   
 });
 
