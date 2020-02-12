@@ -11,7 +11,7 @@ d3.csv("directory.csv").then(data => {
     .append("tr")
     .append("th")
     .attr("colspan", "12")
-    .text("Commuting to Work (%)")
+    .text("NYC High schools directory")
       .style("text-align", "left")
       .style("font-size", "18px");
 
