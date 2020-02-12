@@ -6,12 +6,12 @@ d3.csv("directory.csv").then(data => {
   const table = d3.select("#temps-table");
 
   // table header
-  const thead = table.append("thead"); 
+  const thead = table.append("thead"); // not already in html
   thead
     .append("tr")
     .append("th")
     .attr("colspan", "12")
-    .text("NYC High schools directory")
+    .text("NYC High schools")
       .style("text-align", "left")
       .style("font-size", "18px");
 
@@ -22,13 +22,11 @@ d3.csv("directory.csv").then(data => {
     .data(data.columns)
     .join("th")
     .text(d => d)
-      //.style("color","#808080" );
-      .style("background", "red");
+      .style("color","#808080");
 
   thead
     .selectAll("th:first-child")
       .style("color", "#404040");
-      .style("background", "green");
 
   // rows
   const rows = table
@@ -44,7 +42,7 @@ d3.csv("directory.csv").then(data => {
     .join("td")
     .text(d => d);
   
- 
+
   rows
     .selectAll("td:not(:first-child)")
     .attr("class", d => +d >= 10 ? "double-digits" : null);
@@ -54,7 +52,10 @@ d3.csv("directory.csv").then(data => {
     .selectAll("td:last-child")
       .style("border-right", "none");
 
+// averages row: https://stackoverflow.com/questions/37044713/how-can-we-sum-the-data-of-csv-file-columnwise-using-d3-js
 
- 
+
+
+   
 });
 

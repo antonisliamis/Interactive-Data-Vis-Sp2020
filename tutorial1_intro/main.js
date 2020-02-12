@@ -1,27 +1,33 @@
 // load in csv
 d3.csv("directory.csv").then(data => {
-  // once the data loads, console log it
   console.log("data", data);
 
-  // select the `table` container in the HTML
-  const table = d3.select("#d3-table");
+  // select single instance of table
+  const table = d3.select("#temps-table");
 
-  /** HEADER */
-  const thead = table.append("thead");
+  // table header
+  const thead = table.append("thead"); // not already in html
   thead
     .append("tr")
     .append("th")
-    .attr("colspan", "7")
-    .text("Pre-Survey Results");
+    .attr("colspan", "12")
+    .text("NYC High schools")
+      .style("text-align", "left")
+      .style("font-size", "18px");
 
+  // column names
   thead
     .append("tr")
     .selectAll("th")
     .data(data.columns)
-    .join("td")
-    .text(d => d);
+    .join("th")
+    .text(d => d)
+      .style("color","#808080");
 
-  /** BODY */
+  thead
+    .selectAll("th:first-child")
+      .style("color", "#404040");
+
   // rows
   const rows = table
     .append("tbody")
@@ -34,7 +40,22 @@ d3.csv("directory.csv").then(data => {
     .selectAll("td")
     .data(d => Object.values(d))
     .join("td")
-    // update the below logic to apply to your dataset
-    .attr("class", d => +d > 3 ? 'high' : null)
     .text(d => d);
+  
+
+  rows
+    .selectAll("td:not(:first-child)")
+    .attr("class", d => +d >= 10 ? "double-digits" : null);
+  
+
+  rows
+    .selectAll("td:last-child")
+      .style("border-right", "none");
+
+// averages row: https://stackoverflow.com/questions/37044713/how-can-we-sum-the-data-of-csv-file-columnwise-using-d3-js
+
+
+
+   
 });
+
