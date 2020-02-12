@@ -6,7 +6,7 @@ d3.csv("directory.csv").then(data => {
   const table = d3.select("#temps-table");
 
   // table header
-  const thead = table.append("thead"); // not already in html
+  const thead = table.append("thead"); 
   thead
     .append("tr")
     .append("th")
@@ -22,11 +22,13 @@ d3.csv("directory.csv").then(data => {
     .data(data.columns)
     .join("th")
     .text(d => d)
-      .style("color","#808080");
+      //.style("color","#808080" );
+      .style("background", "red");
 
   thead
     .selectAll("th:first-child")
       .style("color", "#404040");
+      .style("background", "green");
 
   // rows
   const rows = table
@@ -53,22 +55,6 @@ d3.csv("directory.csv").then(data => {
       .style("border-right", "none");
 
 
-  //let totalAvgs = [d3.mean(data.map(function(d){ return d['Drove alone'] })),
-  //  d3.mean(data.map(function(d){ return d.Carpooled })),
-   // d3.mean(data.map(function(d){ return d['Public transportation'] })),
-  //  d3.mean(data.map(function(d){ return d.Walked })),
-  //  d3.mean(data.map(function(d){ return d['Taxi, motorcycle, bike, etc.'] })),
-   // d3.mean(data.map(function(d){ return d['Worked at home'] }))];
-
-   
- // table
-  //  .append("tfoot")
-  // .append("tr")
-   // .text("Average")
-    //  .style("font-weight", "bold")
-   // .selectAll("td")
-  //  .data(totalAvgs)
-   // .join("td")
-  //  .text(d => d3.format(".1f")(d)); // decimal place: https://observablehq.com/@d3/d3-format
+ 
 });
 
