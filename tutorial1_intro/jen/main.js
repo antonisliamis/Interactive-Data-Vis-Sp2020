@@ -22,11 +22,11 @@ d3.csv("directory.csv").then(data => {
     .data(data.columns)
     .join("th")
     .text(d => d)
-      .style("color","#808080");
+      .style("color","#red");
 
   thead
     .selectAll("th:first-child")
-      .style("color", "#404040");
+      .style("color", "#green");
 
   // rows
   const rows = table
