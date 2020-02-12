@@ -1,5 +1,5 @@
 // load in csv
-d3.csv("data/directory.csv").then(data => {
+d3.csv("directory.csv").then(data => {
   console.log("data", data);
 
   // select single instance of table
