@@ -2,6 +2,8 @@
 d3.csv("../data/directory.csv").then(data => {
   console.log("data", data);
 
+
+
   // select single instance of table
   const table = d3.select("#temps-table");
 
@@ -41,6 +43,7 @@ d3.csv("../data/directory.csv").then(data => {
     .data(d => Object.values(d))
     .join("td")
     .text(d => d);
+    .
   
 
   rows
