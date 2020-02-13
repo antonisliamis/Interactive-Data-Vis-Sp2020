@@ -53,6 +53,22 @@ tfoot tr {
   border-top: solid 1px #A9A9A9;
 }
 
-.double-digits {
+.red-color{
   color: #de2d26;
+}
+
+.green-color{
+  color: #26de54;
+}
+
+.purple-color{
+  color: #4e26de;
+}
+
+.pink-color{
+  color: #de268b;
+}
+
+.yellow-color{
+  color: #dbde26;
 }

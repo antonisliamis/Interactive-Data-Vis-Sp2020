@@ -1,7 +1,7 @@
 // load in csv
-d3.csv("../data/directory.csv").then(data => {
+d3.csv("directory.csv").then(data => {
   console.log("data", data);
-   //select single instance of table
+  // select single instance of table
   const table = d3.select("#temps-table");
 
   // table header
@@ -20,8 +20,7 @@ d3.csv("../data/directory.csv").then(data => {
     .selectAll("th")
     .data(data.columns)
     .join("th")
-    .text(function(d){
-      return d})
+    .text(d => d)
       .style("color","#808080");
 
   thead
@@ -41,29 +40,12 @@ d3.csv("../data/directory.csv").then(data => {
     .data(d => Object.values(d))
     .join("td")
     .text(d => d);
+    .
   
 
   rows
     .selectAll("td:not(:first-child)")
-    .attr("class", function(d){ 
-    
-      if(d == "M"){
-        return "red-color";
-      }
-      if(d == "K"){
-        return "green-color";
-      }
-      if(d == "Q"){
-        return "purple-color";
-      }
-      if(d == "X"){
-        return "pink-color";
-      }
-      if(d == "R"){
-        return "yellow-color";
-      } 
-      return null;
-    });
+   // .attr("class", d => +d >= 10 ? "double-digits" : null);
   
 
   rows
@@ -71,6 +53,6 @@ d3.csv("../data/directory.csv").then(data => {
       .style("border-right", "none");
 
 
-
    
 });
+
