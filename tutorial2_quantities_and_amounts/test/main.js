@@ -49,7 +49,7 @@ d3.csv("../../data/squirrelActivities.csv", d3.autoType).then(data => {
       .attr("width", width)
       .attr("height", height)
 
-  // .attr("color", color = ['#0000b4', 'black', '#0094ff', '#0d4bcf', '#0066AE']);
+  // .attr("color", color = ['#0000b4', '#0d4bcf', '#0066AE']);
   const colorScale = d3.scaleLinear().domain([0, d3.max(data, d => d.count) + 30]).range(["#87CEFA", "#20B2AA"])
 
 
