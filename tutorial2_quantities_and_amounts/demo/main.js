@@ -1,7 +1,11 @@
 // data load
 // reference for d3.autotype: https://github.com/d3/d3-dsv#autoType
 d3.csv("../../data/squirrelActivities.csv", d3.autoType).then(data => {
-  console.log(data);
+  console.log(data)
+  var margin = {top: 10, right: 50, bottom: 30, left: 200},
+     width = 960 - margin.left - margin.right,
+     height = 500 - margin.top - margin.bottom;
+
 
   /** CONSTANTS */
   // constants help us reference the same values throughout our code
