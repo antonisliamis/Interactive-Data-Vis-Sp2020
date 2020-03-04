@@ -157,7 +157,7 @@ function draw() {
       enter =>
         enter
           .append("path")
-          .attr("class", "surface")
+          .attr("class", "area")
           .attr("opacity", 0), // start them off as opacity 0 and fade them in
       update => update,
       exit => exit.remove()

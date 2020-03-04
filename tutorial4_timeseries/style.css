@@ -34,13 +34,9 @@ a:link, a:visited {
   opacity: 1;
 }
 
-
-.surface {
-  fill: rgb(170, 219, 241);
-  fill-opacity: 0.15;
-
+.dot:hover {
+  fill:rgb(241, 97, 29);
 }
-
 
 /* axis tick marks */
 .axis {
@@ -60,8 +56,7 @@ a:link, a:visited {
 #dropdown {
   font-family: 'Roboto', sans-serif;
   font-size: 13px;
-  font-weight: bold;
- 
+  border-style:solid;
 }
 
 .trend {
@@ -71,3 +66,8 @@ a:link, a:visited {
   text-decoration-line: blink;
 }
 
+.area {
+  fill: rgb(170, 219, 241);
+  fill-opacity: 0.15;
+  /*fill: #F0F8FF;*/
+}
