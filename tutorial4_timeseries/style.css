@@ -1,0 +1,73 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  padding: 1em 3em;
+  color: rgb(207, 194, 12);
+}
+
+h1 {
+  margin-bottom: 3px;
+}
+
+p {
+  margin: 0;
+}
+
+a:link, a:visited {
+  color: rgb(247, 107, 15);
+  text-decoration: none;
+}
+
+.chart-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.caption {
+  font-size: 13px;
+}
+
+.dot {
+  cursor: pointer;
+  fill: rgb(247, 24, 24);
+  stroke: #2011ec;
+  stroke-width: 5;
+  opacity: 1;
+}
+
+
+.surface {
+  fill: rgb(170, 219, 241);
+  fill-opacity: 0.15;
+
+}
+
+
+/* axis tick marks */
+.axis {
+  font-size: 11px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.axis-label {
+  font-size: 16px;
+  fill:rgb(241, 97, 29);
+  text-anchor: middle;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  padding-right: 15px;
+}
+
+#dropdown {
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+ 
+}
+
+.trend {
+  fill: none;
+  stroke:rgb(241, 115, 11);
+  stroke-width: 2;
+  text-decoration-line: blink;
+}
+
