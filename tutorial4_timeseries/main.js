@@ -2,24 +2,36 @@
 const width = window.innerWidth * 0.7,
   height = window.innerHeight * 0.7,
   margin = { top: 20, bottom: 50, left: 60, right: 40 },
+<<<<<<< HEAD
   radius = 3,
   default_selection = "Select Country";
+=======
+  radius = 5;
+>>>>>>> upstream/master
 
 // these variables allow us to access anything we manipulate in init() but need access to in draw().
 // All these variables are empty before we assign something to them.
 let svg;
 let xScale;
 let yScale;
+<<<<<<< HEAD
 let yAxis;
+=======
+>>>>>>> upstream/master
 
 /* APPLICATION STATE */
 let state = {
   data: [],
+<<<<<<< HEAD
   selectedCountry: null, // + YOUR FILTER SELECTION
+=======
+  selection: "All", // + YOUR FILTER SELECTION
+>>>>>>> upstream/master
 };
 
 /* LOAD DATA */
 // + SET YOUR DATA PATH
+<<<<<<< HEAD
 d3.csv("cancer_in_europe.csv", d => ({
   year: new Date(d.Year, 0, 1),
   country: d.Country,
@@ -35,10 +47,19 @@ d3.csv("cancer_in_europe.csv", d => ({
 
 
 
+=======
+d3.json(YOUR_DATA_PATH, d3.autoType).then(raw_data => {
+  console.log("raw_data", raw_data);
+  state.data = raw_data;
+  init();
+});
+
+>>>>>>> upstream/master
 /* INITIALIZING FUNCTION */
 // this will be run *one time* when the data finishes loading in
 function init() {
   // + SCALES
+<<<<<<< HEAD
   xScale = d3
     .scaleTime()
     .domain(d3.extent(state.data, d => d.year)) // extent outputs min and max in an array (Lynda)
@@ -59,19 +80,36 @@ function init() {
     // `this` === the selectElement
     // this.value holds the dropdown value a user just selected
     state.selectedCountry = this.value;
+=======
+
+  // + AXES
+
+  // + UI ELEMENT SETUP
+
+  const selectElement = d3.select("#dropdown").on("change", function() {
+    // `this` === the selectElement
+    // 'this.value' holds the dropdown value a user just selected
+    state.selection = this.value; // + UPDATE STATE WITH YOUR SELECTED VALUE
+    console.log("new value is", this.value);
+>>>>>>> upstream/master
     draw(); // re-draw the graph based on this new selection
   });
 
   // add in dropdown options from the unique values in the data
   selectElement
     .selectAll("option")
+<<<<<<< HEAD
     .data([default_selection,
       ...Array.from(new Set(state.data.map(d => d.country))),
     ])
+=======
+    .data(["All", "1", "2", "3"]) // + ADD DATA VALUES FOR DROPDOWN
+>>>>>>> upstream/master
     .join("option")
     .attr("value", d => d)
     .text(d => d);
 
+<<<<<<< HEAD
   // this ensures that the selected value is the same as what we have in state when we initialize the options
   selectElement.property("value", default_selection);
 
@@ -110,12 +148,22 @@ function init() {
     .text("Number of Deaths");
 
   draw();
+=======
+  // + SET SELECT ELEMENT'S DEFAULT VALUE (optional)
+
+  // + CREATE SVG ELEMENT
+
+  // + CALL AXES
+
+  draw(); // calls the draw function
+>>>>>>> upstream/master
 }
 
 /* DRAW FUNCTION */
 // we call this everytime there is an update to the data/state
 function draw() {
   // + FILTER DATA BASED ON STATE
+<<<<<<< HEAD
   let filteredData = [];
   if (state.selectedCountry !== null) {
     filteredData = state.data.filter(d => d.country === state.selectedCountry);
@@ -227,3 +275,22 @@ function draw() {
 }
 
 
+=======
+  //
+  // + UPDATE SCALE(S), if needed
+  //
+  // + UPDATE AXIS/AXES, if needed
+  //
+  // + DRAW CIRCLES, if you decide to
+  // const dot = svg
+  //   .selectAll("circle")
+  //   .data(filteredData, d => d.name)
+  //   .join(
+  //     enter => enter, // + HANDLE ENTER SELECTION
+  //     update => update, // + HANDLE UPDATE SELECTION
+  //     exit => exit // + HANDLE EXIT SELECTION
+  //   );
+  //
+  // + DRAW LINE AND AREA
+}
+>>>>>>> upstream/master

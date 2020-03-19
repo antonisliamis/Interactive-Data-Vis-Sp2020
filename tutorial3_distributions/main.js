@@ -11,6 +11,7 @@ let xScale;
 let yScale;
 
 /* APPLICATION STATE */
+<<<<<<< HEAD
 let men = {
   data: [],
   selectedRegion: "All" // + YOUR FILTER SELECTION
@@ -21,6 +22,18 @@ d3.csv("../data/life_expactancy_vs_birth_rates.csv", d3.autoType).then(raw_data 
   // + SET YOUR DATA PATH
   console.log("raw_data", raw_data);
   men.data = raw_data;
+=======
+let state = {
+  data: [],
+  selection: "All" // + YOUR FILTER SELECTION
+};
+
+/* LOAD DATA */
+d3.json("../data/environmentRatings.json", d3.autoType).then(raw_data => {
+  // + SET YOUR DATA PATH
+  console.log("raw_data", raw_data);
+  state.data = raw_data;
+>>>>>>> upstream/master
   init();
 });
 
@@ -28,6 +41,7 @@ d3.csv("../data/life_expactancy_vs_birth_rates.csv", d3.autoType).then(raw_data 
 // this will be run *one time* when the data finishes loading in 
 function init() {
   // + SCALES
+<<<<<<< HEAD
   xScale = d3
     .scaleLinear()
     .domain(d3.extent(men.data, d => d.life_expectancy_at_60_males))
@@ -41,29 +55,46 @@ function init() {
   // + AXES
   const xAxis = d3.axisBottom(xScale);
   const yAxis = d3.axisLeft(yScale);
+=======
+
+  // + AXES
+>>>>>>> upstream/master
 
   // + UI ELEMENT SETUP
 
   const selectElement = d3.select("#dropdown").on("change", function() {
+<<<<<<< HEAD
     console.log("Selected region is", this.value);
     // `this` === the selectElement
     // 'this.value' holds the dropdown value a user just selected
 
     men.selectedRegion = this.value
     console.log("New value is", this.value);
+=======
+    // `this` === the selectElement
+    // 'this.value' holds the dropdown value a user just selected
+
+    state.selection = this.value
+    console.log("new value is", this.value);
+>>>>>>> upstream/master
     draw(); // re-draw the graph based on this new selection
   });
 
   // add in dropdown options from the unique values in the data
   selectElement
     .selectAll("option")
+<<<<<<< HEAD
     .data(["Globally", "Europe & Central Asia", "Sub-Saharan Africa", "East Asia & Pacific",
     "Latin America & Caribbean", "Middle East & North Africa", "South Asia", "North America"]) // + ADD UNIQUE VALUES
+=======
+    .data(["All", "1", "2", "3"]) // + ADD UNIQUE VALUES
+>>>>>>> upstream/master
     .join("option")
     .attr("value", d => d)
     .text(d => d);
 
   // + CREATE SVG ELEMENT
+<<<<<<< HEAD
   svg = d3
     .select("#d3-container")
     .append("svg")
@@ -95,6 +126,8 @@ function init() {
     .attr("writing-mode", "vertical-rl")
     .text("Births for male for 2017")
   
+=======
+>>>>>>> upstream/master
 
   // + CALL AXES
 
@@ -102,6 +135,7 @@ function init() {
 }
 
 /* DRAW FUNCTION */
+<<<<<<< HEAD
  // we call this everytime there is an update to the data/men
 function draw() {
   
@@ -180,3 +214,19 @@ function draw() {
         )
     );
 }
+=======
+ // we call this everytime there is an update to the data/state
+function draw() {
+  
+  // + FILTER DATA BASED ON STATE
+
+  // const dot = svg
+  //   .selectAll("circle")
+  //   .data(filteredData, d => d.name)
+  //   .join(
+  //     enter => enter, // + HANDLE ENTER SELECTION
+  //     update => update, // + HANDLE UPDATE SELECTION
+  //     exit => exit // + HANDLE EXIT SELECTION
+  //   );
+}
+>>>>>>> upstream/master

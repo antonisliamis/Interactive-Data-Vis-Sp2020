@@ -1,0 +1,33 @@
+body {
+  font-family: 'Roboto', sans-serif;
+ 
+}
+
+h1 {
+  margin-bottom: 1px;
+}
+
+p {
+  margin: 0;
+}
+
+a:link, a:visited {
+  color: rgb(225, 110, 65);
+  text-decoration: none;
+}
+
+
+.point {
+  stroke: #FFF;
+  stroke-width: 0.5;
+  opacity: 0.75;
+}
+
+
+.map {
+  fill: rgb(182, 184, 185);
+  stroke: rgb(3, 3, 3);
+  stroke-width: 0.3;
+}
+
+

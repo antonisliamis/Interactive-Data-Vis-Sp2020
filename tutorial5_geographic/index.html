@@ -1,13 +1,20 @@
 <!DOCTYPE html>
   <head>
     <meta charset="utf-8">
-    <title>Interactive Data Visualization Tutorial</title>
+    <title>Interactive Data Visualization | Tutorial 5</title>
     <link rel="stylesheet" href="./style.css">
   </head>
-  <body>
-    Welcome to Interactive Data Visualization Tutorials
+  <body></body>
+    <h1>Historic Buildings of NYC</h1>
+    <p><strong>Datasets:</strong>: <a href="https://data.cityofnewyork.us/City-Government/Neighborhood-Tabulation-Areas-NTA-/cpf4-rkhq" 
+      target="_blank">Historic Buildings of New York</a> (csv), <a href="https://data.cityofnewyork.us/browse?tags=buildings" target="_blank">NTA </a> (Geojson)</p>
+    <br />
+
+    <div id="hover-content"></div>
     <div id="d3-container"> </div>
+
     <script src="../lib/d3.js"></script>
-    <script src="main.js"></script>
+    <script src="./main.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
   </body>
 </html>
