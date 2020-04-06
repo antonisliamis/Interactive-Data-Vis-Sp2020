@@ -1,0 +1,82 @@
+body {
+
+
+    font-family: 'Nunito', sans-serif;
+    padding: 1em 3em;
+  }
+  
+
+
+h1 {
+    font-size: 32px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+label {
+    font-size: 16px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 10px;
+}
+
+#dropdown {
+    font-size: 14px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 10px;
+}
+
+
+
+
+
+
+.rect:hover{
+    stroke:black;
+    stroke-width: 0.5px;
+}
+
+.circle:hover{
+    stroke:black;
+}
+
+.axis-label {
+    font-size: 15px;
+    fill: black;
+    text-anchor: middle;
+}
+
+path.world {
+    fill: #9bb6c3;
+    stroke: #e3e3e3;
+}
+
+.tooltip {
+    display: block;
+    height: fit-content;
+    border:silver;
+    border-width: 0.2px;
+    border-radius: 0px;
+    background-color: #e6f2f8;
+    pointer-events: none;
+    padding: 10px;
+    width: 250px;
+    height:150px;
+    opacity:80%;
+}
+
+.earth {
+    fill: rgb(182, 184, 185);
+    stroke: rgb(243, 26, 26);
+    stroke-width: 0.3;
+  }
+  
+.axis-label {
+    font-size: 14px;
+    fill: black;
+    text-anchor: middle;
+}
+  
