@@ -1,0 +1,108 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  padding: 1em 3em;
+  color: rgba(12, 3, 63, 0.733);
+}
+
+h1 {
+    font-size: 32px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+label {
+    font-size: 16px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 10px;
+}
+
+#dropdown {
+    font-size: 14px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 10px;
+}
+
+.axis {
+  font-size: 11px;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+
+
+.rect:hover{
+    stroke:black;
+    stroke-width: 0.5px;
+}
+
+.circle:hover{
+    stroke:black;
+}
+
+.axis-label {
+  font-size: 16px;
+  fill:rgb(241, 97, 29);
+  text-anchor: middle;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  padding-right: 15px;
+}
+
+path.world {
+    fill: #9bb6c3;
+    stroke: #e3e3e3;
+}
+
+.tooltip {
+    display: block;
+    height: fit-content;
+    border:silver;
+    border-width: 0.2px;
+    border-radius: 0px;
+    background-color: #e6f2f8;
+    pointer-events: none;
+    padding: 10px;
+    width: 250px;
+    height:150px;
+    opacity:80%;
+}
+
+.earth {
+    fill: rgb(182, 184, 185);
+    stroke: rgb(243, 26, 26);
+    stroke-width: 0.3;
+  }
+  
+
+  
+  p {
+    margin: 0;
+  }
+  
+  a:link, a:visited {
+    color: #4169E1;
+    text-decoration: none;
+  }
+  
+  .chart-title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .caption {
+    font-size: 13px;
+  }
+  
+  .dot {
+    cursor: pointer;
+    stroke: #000;
+  }
+  
+  .dot:hover {
+    opacity: 2.75;
+  }
+  
