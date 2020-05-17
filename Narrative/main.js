@@ -24,7 +24,7 @@ let state = {
 };
 
 Promise.all([
-    d3.json("countries.geo.json"),
+    d3.json("world.geojson"),
     d3.csv("ted.csv", d => ({
       year: d.year,
       country: d.country,
@@ -130,7 +130,7 @@ svgGraph.append("g")
 .attr("y", "50%")
 .attr("dx", "-3em")
 .attr("writing-mode", "vertical-rl")
-.text("HDI (Human Development Index");
+.text("HDI -Human Development Index");
 
   
       draw()
@@ -167,8 +167,8 @@ function draw() {
           .on("mouseover", d => {
 
            tooltip
-          .html("Country: " + d.country
-           +"<br/> City: " + "<strong>" + d.city + "<strong>"
+          .html("<strong>"+"Country: " + d.country +"<strong>"
+           +"<br/> City: " + "<strong>" + d.city
            + "<br/> Ted Talks Frequency:" +"<strong>"+ d.ted_total_per_city + "<strong>" 
            +"<br/> Level of Economic Growth: " + d.growth
           + "<br/> Population:" + d.population 
@@ -225,11 +225,15 @@ dot = svgGraph
     // enter selections -- all data elements that don't have a `.dot` element attached to them yet
     enter
       .append("circle")
-      .attr("class", "dot") // Note: this is important so we can identify it in future updates
-      .attr("stroke", "red")
-      .attr("opacity", 0.75)
-      .attr("fill", d => {
-          return "red";
+      .attr("cx", function(d){ return projection([d.long, d.lat])[0] })
+      .attr("cy", function(d){ return projection([d.long, d.lat])[1] })
+      .attr("r", 14)
+      .style("fill", "69b3a2")
+      .attr("stroke", "#69b3a2")
+      .attr("stroke-width", 3)
+      .attr("fill-opacity", .4)
+      .attr("", d => {
+        
       })
       .attr("r", radius)
       .attr("cy", d => margin.top)
@@ -238,11 +242,11 @@ dot = svgGraph
         console.log("123: " + d);
         tooltip
         .html("Country: " + "<strong>" + d.country + "</strong>"
-        +"<br/> City: " + "<strong>" + d.city + "</strong>"
-        +"<br/> Level of Economic Growth: " +  + d.growth
-        + "<br/>" + "Population: "   + d.population 
-        + "<br/>" + "HDI:" +"<strong>"  + d.hdi + "<strong>"
-        +"<br/>"+ "GDP_per_capita:" +"<strong>"+d.gdp_per_capita + "</strong>")
+        +"<br/> City: " + d.city + "</strong>"
+        +"<br/> Level of Economic Growth: " + d.growth
+        +"<br/>  Population: "  + d.population 
+        + "<strong>"+ "<br/> HDI:" + d.hdi + "<strong>"
+        + "<strong>"+"<br/> GDP Per Capita:" +d.gdp_per_capita)
         .transition()
         .duration(200)
         .style("opacity", 1)
