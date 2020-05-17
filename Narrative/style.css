@@ -1,8 +1,10 @@
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Nunito', sans-serif;
   padding: 1em 3em;
   color: rgba(12, 3, 63, 0.733);
 }
+
+
 
 h1 {
     font-size: 32px;
@@ -28,7 +30,7 @@ label {
 
 .axis {
   font-size: 11px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Nunito', sans-serif;
 }
 
 
@@ -44,16 +46,16 @@ label {
 }
 
 .axis-label {
-  font-size: 16px;
-  fill:rgb(241, 97, 29);
+  font-size: 13px;
+  fill:rgb(250, 4, 4);
   text-anchor: middle;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-weight: bold;
-  padding-right: 15px;
+  padding-right: 30px;
 }
 
 path.world {
-    fill: #9bb6c3;
+    fill: #8b8888;
     stroke: #e3e3e3;
 }
 
@@ -72,7 +74,7 @@ path.world {
 }
 
 .earth {
-    fill: rgb(182, 184, 185);
+    fill: rgb(13, 13, 14);
     stroke: rgb(243, 26, 26);
     stroke-width: 0.3;
   }
