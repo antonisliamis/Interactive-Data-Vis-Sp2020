@@ -15,11 +15,24 @@ h2 {
 }
 
 label {
-    font-size: 16px;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 10px;
+  font-size: 18px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 10px;
+  column-fill: black;
+  color-adjust: black;
+  color-fill: black;
+  background-color: #f73714;
+  color: #FFF;
+  /*! border: black; */
+  /*! border-color: darkblue; */
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+  padding-right: 10px;
+  padding-left: 10px;
 }
+
 
 #dropdown {
     font-size: 14px;
